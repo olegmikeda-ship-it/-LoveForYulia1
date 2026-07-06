@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Наше видео ❤️</title>
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+body{
+    background:#000;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    font-family:Arial,sans-serif;
+}
+h1{
+    color:white;
+    margin-bottom:25px;
+    font-size:48px;
+    text-shadow:0 0 20px #ff4d6d;
+}
+video{
+    width:90vw;
+    max-width:1200px;
+    max-height:80vh;
+    border-radius:25px;
+    box-shadow:
+    0 0 30px rgba(255,77,109,0.4),
+    0 0 60px rgba(255,77,109,0.2);
+}
+.back-btn{
+    margin-top:25px;
+    background:#ff4d6d;
+    color:white;
+    text-decoration:none;
+    padding:15px 35px;
+    border-radius:40px;
+    font-size:20px;
+    font-weight:bold;
+    transition:.3s;
+}
+.back-btn:hover{
+    transform:scale(1.08);
+}
+</style>
+</head>
+<body>
+<h1>❤️ Му хе хе хе хе ❤️</h1>
+<video controls autoplay>
+    <source src="video/video.mp4" type="video/mp4">
+</video>
+<a href="story.html" class="back-btn">
+💌 Назад
+</a>
+</body>
+</html>

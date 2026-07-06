@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Колесо любви ❤️</title>
+<style>
+body{
+    margin:0;
+    background:linear-gradient(135deg,#2b0f3a,#5c1f55,#8e4162);
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    color:white;
+    font-family:Arial,sans-serif;
+}
+h1{
+    margin-bottom:30px;
+}
+.arrow{
+    font-size:50px;
+    margin-bottom:10px;
+}
+#wheel{
+    width:500px;
+    height:500px;
+    border-radius:50%;
+    border:10px solid white;
+    transition:transform 5s ease-out;
+    background:
+    conic-gradient(
+    #ff4d6d 0deg 32deg,
+    #ff85a1 32deg 64deg,
+    #ffb3c6 64deg 96deg,
+    #ff4d6d 96deg 128deg,
+    #ff85a1 128deg 160deg,
+    #ffb3c6 160deg 192deg,
+    #ff4d6d 192deg 224deg,
+    #ff85a1 224deg 256deg,
+    #ffb3c6 256deg 288deg,
+    #ff4d6d 288deg 320deg,
+    #ff85a1 320deg 360deg
+    );
+    position:relative;
+}
+button{
+    margin-top:30px;
+    padding:15px 40px;
+    border:none;
+    border-radius:30px;
+    font-size:20px;
+    cursor:pointer;
+}
+#result{
+    margin-top:30px;
+    font-size:30px;
+    font-weight:bold;
+}
+.back{
+    margin-top:25px;
+    color:white;
+    text-decoration:none;
+    background:#ff4d6d;
+    padding:15px 30px;
+    border-radius:30px;
+}
+</style>
+</head>
+<body>
+<h1>🎡 Колесо любви 🎡</h1>
+<div class="arrow">▼</div>
+<div id="wheel"></div>
+<button onclick="spinWheel()">КРУТИТЬ ❤️</button>
+<div id="result"></div>
+<a href="story.html" class="back">
+❤️ Назад
+</a>
+<script>
+const prizes = [
+"🤗 Обнимашка",
+"💋 Поцелуй",
+"🍕 Заказываем вкусняшку",
+"🎁 Маленький сюрприз",
+"🌹 10 комплиментов подряд",
+"🫶 5 минут обнимашек без права отпускать",
+"📸 Делаем новое совместное фото",
+"🤭 Перекрутить ещё раз",
+"🍫 Сладкий приз",
+"❤️ Любое желание",
+"⭐ Назови 5 причин почему любишь меня"
+];
+let rotation = 0;
+function spinWheel(){
+    const wheel = document.getElementById("wheel");
+    const randomIndex =
+    Math.floor(Math.random()*prizes.length);
+    rotation += 1800 + Math.random()*1000;
+    wheel.style.transform =
+    `rotate(${rotation}deg)`;
+    setTimeout(()=>{
+        document.getElementById("result")
+        .innerHTML =
+        prizes[randomIndex];
+    },5000);
+}
+</script>
+</body>
+</html>

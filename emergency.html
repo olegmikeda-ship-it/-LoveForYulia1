@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Аварийный протокол ❤️</title>
+<style>
+body{
+    margin:0;
+    background:#111;
+    color:white;
+    font-family:Arial,sans-serif;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    text-align:center;
+}
+.card{
+    max-width:800px;
+    padding:30px;
+}
+button{
+    margin:10px;
+    padding:15px 30px;
+    border:none;
+    border-radius:30px;
+    cursor:pointer;
+    font-size:18px;
+}
+.hidden{
+    display:none;
+}
+.correct{
+    background:#ff4d6d;
+    color:white;
+}
+.wrong{
+    background:#444;
+    color:white;
+}
+#slider{
+    width:300px;
+}
+</style>
+</head>
+<body>
+<div class="card">
+<div id="step1">
+<h1>🚨 ВНИМАНИЕ 🚨</h1>
+<p>
+Обнаружена нехватка Олега.
+</p>
+<p>
+Для получения экстренной помощи
+необходимо пройти проверку.
+</p>
+<button class="correct" onclick="next1()">
+Начать проверку ❤️
+</button>
+</div>
+<div id="step2" class="hidden">
+<h2>
+Вы действительно Юля?
+</h2>
+<button onclick="wrong()">
+Нет
+</button>
+<button class="correct" onclick="next2()">
+Да ❤️
+</button>
+</div>
+<div id="step3" class="hidden">
+<h2>
+Кто самый лучший парень?
+</h2>
+<button onclick="wrong()">
+Кто-то другой
+</button>
+<button class="correct" onclick="next3()">
+Олег ❤️
+</button>
+</div>
+<div id="step4" class="hidden">
+<h2>
+Насколько сильно скучаешь?
+</h2>
+<input
+type="range"
+min="0"
+max="100"
+value="50"
+id="slider">
+<button class="correct" onclick="next4()">
+
+    Проверить ❤️
+
+</button>
+</div>
+<div id="step5" class="hidden">
+<h2>
+Результат проверки:
+</h2>
+<h1>
+1000% ❤️
+</h1>
+<button class="correct" onclick="next5()">
+Продолжить
+</button>
+</div>
+<div id="step6" class="hidden"       >
+<h2>
+Поиск решения...
+</h2>
+<h1 id="loading">
+0%
+</h1>
+</div>
+<div id="step7" class="hidden">
+<h1>
+🎉 Решение найдено 🎉
+</h1>
+<p>
+Нажмите на подарок
+</p>
+<button
+class="correct"
+style="font-size:40px;"
+onclick="openGift()">
+🎁
+</button>
+</div>
+<div id="final" class="hidden">
+<h1>
+Экстренная замена Олега  😏❤️
+</h1>
+<img
+src="images/gift.jpg"
+style="
+max-width:400px;
+width:100%;
+border-radius:20px;
+">
+</div>
+</div>
+<script>
+function wrong(){
+alert("Неправильный ответ 😡❤️");
+}
+function next1(){
+step1.classList.add("hidden");
+step2.classList.remove("hidden");
+}
+function next2(){
+step2.classList.add("hidden");
+step3.classList.remove("hidden");
+}
+function next3(){
+step3.classList.add("hidden");
+step4.classList.remove("hidden");
+}
+function next4(){
+step4.classList.add("hidden");
+step5.classList.remove("hidden");
+}
+function next5(){
+step5.classList.add("hidden");
+step6.classList.remove("hidden");
+let percent = 0;
+const timer = setInterval(()=>{
+percent += 5;
+document.getElementById("loading")
+.innerText = percent + "%";
+if(percent >= 100){
+clearInterval(timer);
+step6.classList.add("hidden");
+step7.classList.remove("hidden");
+}
+},100);
+}
+function openGift(){
+step7.classList.add("hidden");
+final.classList.remove("hidden");
+}
+</script>
+</body>
+</html>
